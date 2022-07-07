@@ -6,14 +6,22 @@ the fundamental idea is to use a CNN as an end-to-end method
 there's tons of working models from the internet, we can 100% do at least a few versions using these and some transfer learning to just get some results
 
 should be the best method, if not for simplicity for performance
+
+#### Datasets
+Hands Over Face https://drive.google.com/file/d/1hHUvINGICvOGcaDgA5zMbzAIUv7ewDd3/edit
+EgoHands http://vision.soic.indiana.edu/projects/egohands/
+
+Oxford Hands https://www.robots.ox.ac.uk/~vgg/data/hands/
+
+
 #### TODO:
- - [ ] setup goole colab   
-   - [ ] load dataset on google colab
- - [ ] setup pytorch 
-   - [ ] add pytorch to googlecolab
-   - [ ] load models in pytorch for image segmentation 
-   - [ ] run them on small sample
- - [ ] use pytorch segmenttion models
+ - [x] setup goole colab   
+   - [x] load dataset on google colab
+ - [x] setup pytorch 
+   - [x] add pytorch to googlecolab
+   - [x] load models in pytorch for image segmentation 
+   - [x] run them on small sample
+ - [ ] use pytorch segmentation models
    - [ ] learn the models design enought to do some basic retraining
    - [ ] retrain on dataset
    - [ ] check performance 
@@ -27,6 +35,19 @@ pytorch CNN segmentation models, could be great candidates for some form of tran
 we could pick one or two of these, although wome work will be needed to understand how to retrain them exactly
 
 
+https://towardsdatascience.com/train-an-object-detector-using-tensorflow-2-object-detection-api-in-2021-a4fed450d1b9
+useful tutorial although very basic
+
+
+https://learnopencv.com/mask-r-cnn-instance-segmentation-with-pytorch/
+
+all pytorch models, both semantic and instance segmentators
+https://pytorch.org/vision/stable/models.html#
+Mask RCNN seems easy and powerful
+
+https://pytorch.org/vision/stable/auto_examples/plot_visualization_utils.html#semantic-segmentation-models
+for result visualization
+
 ### Simple patter matching
 Bruno's idea
 simple, might be a good naive approach
@@ -39,7 +60,8 @@ probably vulnerable to weird scales, some occlusion and rotation
 needs approach for segmentation beyond detection
 
 #### TODO:
- - [ ] get a clear pseudocode/logical steps of algorithm
+ - [ ] get a clear pseudocode/logical steps of algorithm    
+   - [ ] search it online
  - [ ] define basic hand images set
  - [ ] do basic implementation in python
 
@@ -54,9 +76,24 @@ check with threshold
 vulnearble to weird shapes, occlusion
 needs approach for segmentation beyond detection
 #### TODO:
- - [ ] search "bag of words opencv python"
- - [ ] implement basic version and understand findamentals of method
+ - [x] search "bag of words opencv python"
+ - [ ] implement basic version and understand fundamentals of method
  - [ ] research
+
+### Cascade ?
+There is a full cascade trainer in OpenCV
+issue is that the trainer is already implemented, we could just train it on the data and use the resulting code but idk if it's valid
+
+would probably be quite resilient to many problems and issues
+
+https://docs.opencv.org/4.x/dc/d88/tutorial_traincascade.html 
+https://docs.opencv.org/4.x/db/d28/tutorial_cascade_classifier.html
+
+
+#### TODO:
+ - [x] discuss with colleagues
+ - [ ] understand if we could use the internal trianer and then just write the model code
+ - [ ] try and see if it works
 
 ## other 
 
