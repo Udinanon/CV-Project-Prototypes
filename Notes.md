@@ -12,7 +12,10 @@ Hands Over Face https://drive.google.com/file/d/1hHUvINGICvOGcaDgA5zMbzAIUv7ewDd
 EgoHands http://vision.soic.indiana.edu/projects/egohands/
 
 Oxford Hands https://www.robots.ox.ac.uk/~vgg/data/hands/
-
+Kaggle https://www.kaggle.com/datasets/shyambhu/hands-and-palm-images-dataset
+Padova https://lttm.dei.unipd.it/downloads/gesture/
+https://docs.activeloop.ai/datasets/11k-hands-dataset
+http://www.rovit.ua.es/dataset/mhpdataset/
 
 #### TODO:
  - [x] setup goole colab   
@@ -23,8 +26,8 @@ Oxford Hands https://www.robots.ox.ac.uk/~vgg/data/hands/
    - [x] run them on small sample
  - [ ] use pytorch segmentation models
    - [x] learn the models design enought to do some basic retraining
-   - [ ] restructure the model
    - [ ] prepare dataset for pytorch
+   - [ ] restructure the model
    - [ ] run retraining
    - [ ] check performance 
  - read papers and sources to find other models
@@ -63,6 +66,7 @@ R-CNN -> Fast R-CNN -> Faster R-CNN -> Mask R-CNN
 
 R-CNN 
 
+https://arxiv.org/abs/1311.2524v5
 so R-CNN sems to basically produce regions of interest, warp them to feed tnem inside a CNN that genrates a fixed length vector, thne this vector is fed into a SVM that has been trained to recognise the category of gthe ROI
 
 > The first generates category-independent region proposals.
@@ -81,20 +85,22 @@ The CNN used is AlexNet
 https://papers.nips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf
 
 Fast R-CNN
+https://arxiv.org/abs/1504.08083v2
 it switches to VGG19
 it also does the convolution first on the entire image and then processes the subregions individually, reducing redundant comoutations
 then the regions are exrtacted from the convolutied image and converted in fixed length feature vectors by a polling layer, and then these features are processed by a fully connected sequence that generates a class prediction. it also produces a more accuarte bounding box prediction
 there are also some other changes but i don0t quite grasp them
 
 Faster R-CNN
+https://arxiv.org/pdf/1506.01497v3.pdf
 use Fully Convolutional networks to generate the ROIs to then look into for objects
 it also shares parts of the convolutional network with the CNN that extracts the featurs taht will be used to identify objects, sharing work and lowering load
 beign fully connected also makes it able to process arbitrary input sizes
 
 Mask R-CNN 
+https://arxiv.org/abs/1311.2524v5
 adds another FCN that reads the ourput of the Faster RCNN ROI processing and creates a mask 
 
-https://pyimagesearch.com/2020/06/29/opencv-selective-search-for-object-detection/
 
 ???
  HOG-based deformable part model (DPM)
@@ -130,6 +136,10 @@ needs approach for segmentation beyond detection
  - [x] search "bag of words opencv python"
  - [ ] implement basic version and understand fundamentals of method
  - [ ] research
+
+https://pyimagesearch.com/2020/06/29/opencv-selective-search-for-object-detection/
+https://pyimagesearch.com/2020/06/22/turning-any-cnn-image-classifier-into-an-object-detector-with-keras-tensorflow-and-opencv/
+https://learnopencv.com/selective-search-for-object-detection-cpp-python/
 
 ### Cascade ?
 There is a full cascade trainer in OpenCV
