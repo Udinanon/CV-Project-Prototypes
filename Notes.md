@@ -8,14 +8,27 @@ there's tons of working models from the internet, we can 100% do at least a few 
 should be the best method, if not for simplicity for performance
 
 #### Datasets
+https://github.com/guglielmocamporese/hands-segmentation-pytorch/blob/d4643f3a2137e90e60b8eba0d5bb06bb25552841/dataloader.py#L356
+a great source
+
 Hands Over Face https://drive.google.com/file/d/1hHUvINGICvOGcaDgA5zMbzAIUv7ewDd3/edit
+  instance segmentation only by reading xml, will have to be parsed
 EgoHands http://vision.soic.indiana.edu/projects/egohands/
+  can be used to get instance segmantation
+
+VLM- Hand Over Face Dataset https://sites.google.com/view/sghanem/vlm-handoverface
+  contains left-right hand masks, great
 
 Oxford Hands https://www.robots.ox.ac.uk/~vgg/data/hands/
+  only bounding boxes, not axis aligned
 Kaggle https://www.kaggle.com/datasets/shyambhu/hands-and-palm-images-dataset
+  no segmentation or boxes
 Padova https://lttm.dei.unipd.it/downloads/gesture/
+  kinect and depth, no labeling
 https://docs.activeloop.ai/datasets/11k-hands-dataset
+  same as kaggle
 http://www.rovit.ua.es/dataset/mhpdataset/
+  bounding boxes only, the rest is pose data
 
 #### TODO:
  - [x] setup goole colab   
@@ -26,7 +39,7 @@ http://www.rovit.ua.es/dataset/mhpdataset/
    - [x] run them on small sample
  - [ ] use pytorch segmentation models
    - [x] learn the models design enought to do some basic retraining
-   - [ ] prepare dataset for pytorch
+   - [x] prepare dataset for pytorch
    - [ ] restructure the model
    - [ ] run retraining
    - [ ] check performance 
